@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="147dp"
+        android:layout_marginBottom="150dp"
         android:layout_marginRight="20dp"
         android:layout_toLeftOf="@+id/textView1"
         android:background="@drawable/rocksmall"/>
@@ -53,7 +53,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="26dp"
+        android:layout_marginTop="15dp"
         android:layout_toLeftOf="@+id/buttonPaper"
         android:src="@drawable/question"/>
 
@@ -72,7 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_alignRight="@+id/buttonPaper"
         android:layout_below="@+id/buttonPaper"
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="40dp"
         android:src="@drawable/home"/>
 
 </RelativeLayout>

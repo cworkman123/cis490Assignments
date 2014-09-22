@@ -71,15 +71,15 @@ public class RockPaperScissors extends Activity implements View.OnClickListener 
         switch (v.getId()) {
             case R.id.buttonRock:
                 userSelection = Option.ROCK;
-                imageView.setImageResource(R.drawable.rock_small);
+                imageView.setImageResource(R.drawable.rocksmall);
                 break;
             case R.id.buttonPaper:
                 userSelection = Option.PAPER;
-                imageView.setImageResource(R.drawable.paper_small);
+                imageView.setImageResource(R.drawable.papersmall);
                 break;
             case R.id.buttonScissors:
                 userSelection = Option.SCISSORS;
-                imageView.setImageResource(R.drawable.scissors_small);
+                imageView.setImageResource(R.drawable.scissorssmall);
                 break;
             case R.id.imageButtonHome:
                 Intent intent = getIntent();
@@ -106,10 +106,10 @@ public class RockPaperScissors extends Activity implements View.OnClickListener 
 
         //sets right messsage in regards to the result of the game
         if(gameResult == Result.LOSS){
-            builder.setMessage("You Lose, Scrub!");
+            builder.setMessage("You Lose!");
         }
         else if(gameResult == Result.WIN){
-            builder.setMessage("You Win, Bro!");
+            builder.setMessage("You Win!");
         }
         else if(gameResult == Result.DRAW){
             builder.setMessage("It's a draw, play again!");
@@ -129,15 +129,15 @@ public class RockPaperScissors extends Activity implements View.OnClickListener 
         switch(rand) {
             case 0:
                 androidSelection = Option.ROCK;
-                imageView.setImageResource(R.drawable.rock_small);
+                imageView.setImageResource(R.drawable.rocksmall);
                 break;
             case 1:
                 androidSelection = Option.PAPER;
-                imageView.setImageResource(R.drawable.paper_small);
+                imageView.setImageResource(R.drawable.papersmall);
                 break;
             case 2:
                 androidSelection = Option.SCISSORS;
-                imageView.setImageResource(R.drawable.scissors_small);
+                imageView.setImageResource(R.drawable.scissorssmall);
                 break;
         }
 
