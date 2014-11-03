@@ -3,6 +3,7 @@ package com.example.channing.notmymusic2;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
 
+import com.example.channing.notmymusic2.fragments.AddFragment;
+import com.example.channing.notmymusic2.fragments.SearchFragment;
 
 
 public class MainActivity extends Activity {
@@ -40,11 +43,29 @@ public class MainActivity extends Activity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+        switch (id){
+            case R.id.action_search: search(); return true;
+            case R.id.action_add: add(); return true;
+        }
+
+
+      /*
         if (id == R.id.action_settings) {
             return true;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
+
+    private void add(){
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.action_add, new AddFragment(), null ).commit();
+    }
+
+    private void search(){
+        FragmentTransaction transaction = getFragmentManager().beginTransaction();
+        transaction.replace(R.id.action_search, new SearchFragment(), null).commit();
+    }
+
 
     /**
      * A placeholder fragment containing a simple view.

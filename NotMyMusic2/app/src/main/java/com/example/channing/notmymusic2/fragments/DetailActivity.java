@@ -2,7 +2,11 @@ package com.example.channing.notmymusic2.fragments;
 
 import android.app.ActionBar;
 import android.app.Activity;
+import android.app.Fragment;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import com.example.channing.notmymusic2.R;
 import com.example.channing.notmymusic2.listener.MyTabListener;
@@ -10,13 +14,16 @@ import com.example.channing.notmymusic2.listener.MyTabListener;
 /**
  * Created by Channing on 11/3/2014.
  */
-public class DetailActivity extends Activity {
+public class DetailActivity extends Fragment {
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detail);
 
-        ActionBar actionbar = getActionBar();
+
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState){
+
+        View rootView = inflater.inflate(R.layout.activity_detail, container, false);
+
+        ActionBar actionbar = getActivity().getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 
@@ -35,5 +42,6 @@ public class DetailActivity extends Activity {
         events.setTabListener(new MyTabListener());
         actionbar.addTab(events);
 
+        return rootView;
     }
 }
