@@ -14,16 +14,13 @@ import com.example.channing.notmymusic2.listener.MyTabListener;
 /**
  * Created by Channing on 11/3/2014.
  */
-public class DetailActivity extends Fragment {
+public class DetailActivity extends Activity {
     @Override
 
-
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState){
-
-        View rootView = inflater.inflate(R.layout.activity_detail, container, false);
-
-        ActionBar actionbar = getActivity().getActionBar();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_detail);
+        ActionBar actionbar = getActionBar();
         actionbar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 
@@ -41,7 +38,6 @@ public class DetailActivity extends Fragment {
         ActionBar.Tab events = actionbar.newTab().setText("Events");
         events.setTabListener(new MyTabListener());
         actionbar.addTab(events);
-
-        return rootView;
     }
+
 }
