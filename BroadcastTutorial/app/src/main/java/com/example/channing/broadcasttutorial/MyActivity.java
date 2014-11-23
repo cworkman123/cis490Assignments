@@ -7,6 +7,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.parse.Parse;
+
 
 public class MyActivity extends Activity {
 
@@ -14,6 +16,8 @@ public class MyActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+
+        Parse.initialize(this, "APPLICATION ID", "CLIENT KEY");
     }
 
 
