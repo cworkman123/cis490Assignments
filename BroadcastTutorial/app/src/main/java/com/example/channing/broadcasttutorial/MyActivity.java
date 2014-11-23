@@ -8,6 +8,8 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.parse.Parse;
+import com.parse.ParseObject;
+import com.parse.PushService;
 
 
 public class MyActivity extends Activity {
@@ -18,6 +20,13 @@ public class MyActivity extends Activity {
         setContentView(R.layout.activity_my);
 
         Parse.initialize(this, "APPLICATION ID", "CLIENT KEY");
+
+       /* ParseObject testObject = new ParseObject("TestObject");
+        testObject.put("foo","bar");
+        testObject.saveInBackground(); */
+
+        PushService.setDefaultPushCallback(this, MyActivity.class);
+
     }
 
 
