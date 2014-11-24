@@ -4,5 +4,10 @@
     <string name="app_name">Parser</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="app_instruction">Enter your first and last name.</string>
+    <string name="first_name">First Name.</string>
+    <string name="last_name">Last Name.</string>
+    <string name="button_text">Push to Parse</string>
+    <string name="list_text">View Parse List</string>
 
 </resources>

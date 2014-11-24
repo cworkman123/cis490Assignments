@@ -3,6 +3,10 @@ package com.example.channing.parser;
 import android.app.Activity;
 import android.app.ActionBar;
 import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.ListFragment;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -10,8 +14,11 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.Parse;
+import com.parse.ParseObject;
 import com.parse.PushService;
 
 
@@ -27,11 +34,45 @@ public class MyActivity extends Activity {
                     .commit();
         }
 
-        Parse.initialize(this, "APPLICATION ID", "CLIENT KEY");
+        Parse.initialize(this, "2nGG5G9dJQzqKPwSo3aOSMQqACxjRw7DwaZN5xzu", "kuPUqVcYKayvTyt8ulT8RJ61UIJUnJ1BGVGmSnvP");
         //Default Activity to handle push notifications
         PushService.setDefaultPushCallback(this, MyActivity.class);
+
     }
 
+    public void viewList(View view){
+        ListFragment fr = null;
+        if(view == findViewById(R.id.ButtonParseList)){
+            fr = new MyListFragment();
+        }
+
+        FragmentManager fm = getFragmentManager();
+        FragmentTransaction fragmentTransaction = fm.beginTransaction();
+        fragmentTransaction.replace(R.id.container,fr);
+        fragmentTransaction.commit();
+    }
+
+
+    public void pushParse(View button){
+        final EditText firstNameField = (EditText) findViewById(R.id.EditFirstName);
+        String firstName = firstNameField.getText().toString();
+
+        final EditText lastNameField = (EditText) findViewById(R.id.EditLastName);
+        String lastName = lastNameField.getText().toString();
+
+        ParseObject names = new ParseObject("Names");
+        names.put("firstNameParse",firstName);
+        names.put("lastNameParse",lastName);
+        names.saveInBackground();
+
+
+        Context context = getApplicationContext();
+        CharSequence text = "Names Pushed";
+        int duration = Toast.LENGTH_SHORT;
+        Toast toast = Toast.makeText(context,text,duration);
+        toast.show();
+
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,5 +107,7 @@ public class MyActivity extends Activity {
             View rootView = inflater.inflate(R.layout.fragment_my, container, false);
             return rootView;
         }
+
+
     }
 }
