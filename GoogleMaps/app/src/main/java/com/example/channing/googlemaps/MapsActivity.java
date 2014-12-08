@@ -12,6 +12,12 @@ public class MapsActivity extends FragmentActivity {
 
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
+   //Latitude and Longitude of my Markers
+    static final LatLng LOUISVILLE = new LatLng(38.2500,85.7667);
+    static final LatLng LEXINGTON = new LatLng(38.0297,84.4947);
+    static final LatLng INDIANAPOLIS = new LatLng(39.7910,86.1480);
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
