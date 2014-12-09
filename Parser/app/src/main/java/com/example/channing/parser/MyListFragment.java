@@ -36,7 +36,7 @@ public class MyListFragment extends ListFragment {
         setListAdapter(adapter);
 
 
-
+        //Loop through the Parse Object and add values to the List View Fragment via an ArrayAdapter
         ParseQuery<ParseObject> query = ParseQuery.getQuery("Names");
         query.findInBackground(new FindCallback<ParseObject>() {
             @Override
@@ -51,20 +51,6 @@ public class MyListFragment extends ListFragment {
                 }
             }
         });
-
-
-        /*
-        query.getFirstInBackground(new GetCallback<ParseObject>() {
-            @Override
-            public void done(ParseObject parseObject, ParseException e) {
-                if(e == null) {
-                    // object will be names
-                } else{
-                    // something went wrong
-                }
-            }
-        });*/
-
 
     }
 

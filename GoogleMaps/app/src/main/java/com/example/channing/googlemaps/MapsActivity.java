@@ -3,6 +3,7 @@ package com.example.channing.googlemaps;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 
+import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
@@ -13,9 +14,9 @@ public class MapsActivity extends FragmentActivity {
     private GoogleMap mMap; // Might be null if Google Play services APK is not available.
 
    //Latitude and Longitude of my Markers
-    static final LatLng LOUISVILLE = new LatLng(38.2500,85.7667);
-    static final LatLng LEXINGTON = new LatLng(38.0297,84.4947);
-    static final LatLng INDIANAPOLIS = new LatLng(39.7910,86.1480);
+    static final LatLng LOUISVILLE = new LatLng(38.2500, 85.7667);
+    static final LatLng LEXINGTON = new LatLng(38.0297, 84.4947);
+    static final LatLng INDIANAPOLIS = new LatLng(39.7910, 86.1480);
 
 
     @Override
@@ -69,6 +70,8 @@ public class MapsActivity extends FragmentActivity {
         mMap.addMarker(new MarkerOptions().position(LOUISVILLE).title("Louisville"));
         mMap.addMarker(new MarkerOptions().position(LEXINGTON).title("Lexington"));
         mMap.addMarker(new MarkerOptions().position(INDIANAPOLIS).title("Indianapolis"));
+
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(LOUISVILLE, 15));
 
     }
 }
